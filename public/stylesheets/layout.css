@@ -1,0 +1,216 @@
+.topheader {
+	padding: 8px 10px;
+	background: #34445e url('../images/topheaderbg.png');
+	border-bottom: 1px solid #303f59;
+	height: 45px;
+}
+.topheader .left {
+}
+.topheader .left h1 {
+	margin: 10px 0;
+	float: left;
+	color: #fb9337;
+	font-size: 30px;
+}
+.topheader .left .slogan {
+	float: left;
+	margin: 2px 10px;
+	padding: 8px 10px;
+	border-left: 1px solid #606d84;
+	color: #6a778d;
+}
+.search {
+	float: left;
+	margin: 2px 10px;
+}
+.search input[type='text'] {
+	float: left;
+	padding: 10px 8px 11px 8px;
+	width: 200px;
+	border: 0;
+	background-color: #32415a;
+	color: #4a5b78;
+	font-style: italic;
+	border-radius: 2px 0 0 2px;
+	box-shadow: inset 1px 1px 2px #2b384e;
+}
+.search input[type='text']:focus {
+	font-style: normal;
+	color: #fff;
+}
+.search .submitButton {
+	border: 0;
+	width: 38px;
+	height: 37px;
+	background: url('../images/icons/searchbutton.png') no-repeat 0 0;
+	border-bottom: 1px solid #445775;
+	cursor: pointer;
+}
+.topheader .right {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+.userinfo {
+	padding: 6px 18px 6px 6px;
+	border-bottom: 1px solid #445775;
+	background: #32415a url('../images/icons/userinfoarrow.png') no-repeat right center;
+	box-shadow: inset 1px 1px 2px #2b384e;
+}
+.userinfo:hover {
+	cursor: pointer;
+	background-color: #2d3b53;
+}
+.userinfo img {
+	border: 1px solid #b9c1ce;
+	vertical-align: middle;
+}
+.userinfo span {
+	display: inline-block;
+	padding: 0 5px;
+	color: #b9c2cf;
+}
+.userinfodrop {
+	display: none;
+	position: absolute;
+	top: 52px;
+	right: 0;
+	padding: 10px;
+	min-width: 280px;
+	border-radius: 2px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+	background-color: #fff;
+}
+.userinfodrop .avatar {
+	float: left;
+}
+.userdata {
+	margin-left: 105px;
+}
+.userdata h4 {
+	color: #2d3c54;
+}
+.userdata .email {
+	color: #999;
+	font-size: 11px;
+}
+.userdata ul {
+	margin-top: 10px;
+}
+.userdata ul li {
+	display: block;
+	margin-bottom: 1px;
+}
+.userdata ul li a {
+	display: block;
+	padding: 5px;
+	background-color: #f7f7f7;
+	border-radius: 2px;
+}
+.userdata ul li a:hover {
+	background-color: #fb9337;
+	color: #fff;
+}
+
+/***HEADER***/
+.header {
+	box-shadow: inset 0 1px 0 #50627f;
+	border-bottom: 5px solid #fb9337;
+	background: #485b79 url('../images/headerbg.png');
+}
+.headermenu {
+	display: inline-block;
+	border-right: 1px solid #576a85;
+}
+.headermenu li {
+	/*float: left;*/
+	display: inline-block;
+	border-right: 1px solid #394962;
+	border-left: 1px solid #576a85;
+}
+.headermenu li a {
+	display: block;
+	padding: 17px 10px;
+	min-width: 80px;
+	text-align: center;
+	color: #fff;
+}
+.headermenu li a span.icon {
+	display: block;
+	margin-bottom: 10px;
+	height: 30px;
+}
+.headermenu li a span.icon-flatscreen {
+	background: url('../images/icons/flatscreen.white.png') no-repeat center center;
+}
+.headermenu li a span.icon-message {
+	background: url('../images/icons/message.white.png') no-repeat center center;
+}
+.headermenu li.current {
+	border-left: 0;
+	border-right: 1px solid #394962;
+}
+.headermenu li.current a {
+	background: url('../images/arrow-active.png') no-repeat center bottom;
+	box-shadow: inset 0 1px 0 #4f627e;
+}
+/***LEFT MENU***/
+.vernav {
+	position: absolute;
+	left: 0;
+	top: 160px;
+	width: 230px;
+}
+.vernav > ul {
+	margin-top: 5px;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+.vernav > ul > li {
+	border-top: 1px solid #ccc;
+}
+.vernav ul li a {
+	display: block;
+	padding: 12px 10px;
+	background-color: #f7f7f7;
+	border-radius: 2px;
+}
+.iconmenu > ul > li > a {
+	padding-left: 35px;
+	background-image: url('../images/icons/icons_sprite.png');
+	background-repeat: no-repeat;
+	background-position: 10px 12px;
+}
+.iconmenu > ul > li > a:hover {
+	background-image: url('../images/icons/icons_sprite2.png');
+}
+.iconmenu ul li.current > a:hover {
+	background-image: url('../images/icons/icons_sprite.png');
+}
+.vernav > ul > li > a:hover {
+	background-color: #32415A;
+	color: #eee;
+}
+.vernav ul li.current > a {
+	background-color: #32415A;
+	color: #fb9337;
+}
+
+.vernav .togglemenu {
+	display: block;
+	margin: 10px;
+	height: 21px;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	background: url('../images/menucollapsed.png') no-repeat center -20px;
+}
+.vernav .togglemenu_collapsed {
+	margin: 10px auto;
+	width: 35px;
+	background-position: center -21px;
+}
+
+
+.centercontent {
+	margin-left: 231px;
+}

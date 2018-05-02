@@ -1,0 +1,58 @@
+extends layout
+block css
+  link(rel='stylesheet', href='/stylesheets/message.css')
+block menu
+  .vernav.iconmenu
+    ul
+      li
+        a.addmsg 写信息
+      li
+        a(href="/message/inbox").inbox 收件箱
+      li
+        a(href="/message/starmsg") 星标消息
+      li
+        a(href="/message/outbox") 发件箱
+      li
+        a(href="/message/draft") 草稿
+    a.togglemenu
+block centercontent
+  .centercontent
+    .message
+      ul
+        each item in msgs
+          li.clearfix
+            .status(data-msgid=item._id)
+              a.star(class=item.star)
+              a.box(class=item.box)
+            .content
+              h6 标题名称
+              p  #{item.title}
+            .owner
+              h6 发件人：
+              p #{item.owner.uid}
+    .newmsg
+      form(action="/message/newmsg", method="post")
+        .receiver
+          label 收件人
+          p
+            input#uid.longinput(type="text")
+            input#receiver(type="hidden", name="receiver")
+        .title
+          label 主题
+          p
+            input.longinput(type="text", name="title")
+        .detail
+          label 正文
+          p
+            textarea.longinput(type="text", rows="10", name="detail")
+        .sender
+          span 发件人：
+          span #{user.uid}
+          input#isedit(type="hidden")
+        input(type="hidden", name="owner", value=user._id)
+        .submitButton
+          a(href="#", class="save") 存草稿
+          a(href="#", class="send") 发送
+          a(href="#", class="delete") 删除
+      ul.userlist
+  script(src="../javascripts/message.js")

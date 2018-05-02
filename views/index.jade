@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/base.css')
+    link(rel='stylesheet', href='/stylesheets/index.css')
+  body
+    .welcome
+      .text-vertical-center
+        h1 正博智慧科技
+        a.showmodal ZBKJ LOGIN
+    .loginmodal
+    .loginpage
+      .loginbox
+        .logo
+          h1 ZBKJ.
+            span Admin
+          span.slogan 后台管理系统
+        .err
+        form
+          .username
+            input(type="text", name="username", placeholder="Username")
+          .password
+            input(type="text", name="password", placeholder="Password")
+          a.loginbtn#login 登入
+          .keep
+            input(type="checkbox", name="keep")
+            |  记住密码
+    script(src="/libs/jquery/dist/jquery.min.js")
+    script(src="/javascripts/index.js")

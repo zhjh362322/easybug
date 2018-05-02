@@ -1,0 +1,94 @@
+.message {
+	padding: 5px;
+}
+.message ul li {
+	padding: 20px 0;
+	list-style: none;
+	border-bottom: 1px solid #ccc;
+}
+.message li > div {
+	float: left;
+	margin-right: 3%;
+}
+.message .status {
+	width: 5%;
+}
+.message .content {
+	width: 79%;
+}
+.message .owner {
+	margin-right: 0;
+	width: 10%;
+}
+.message .status a {
+	display: block;
+	margin-left: 20px;
+	padding: 12px 10px;
+	background: url('../images/icons/icons_sprite.png');
+	background-repeat: no-repeat;
+}
+.message .status .star {
+	background-position: 3px -717px;
+}
+.message .status .star.current {
+	background-position: 3px -753px;
+}
+.message .status .box {
+	background-position: 3px -644px;
+}
+.message .status .box.current {
+	background-position: 3px -680px;
+}
+.newmsg {
+	display: none;
+	position: relative;
+	padding: 5px;
+}
+.newmsg label {
+	float: left;
+	line-height: 32px;
+	text-align: right;
+	width: 180px;
+}
+.newmsg p {
+	margin-left: 200px;
+	margin-bottom: 20px;
+}
+.newmsg input, .newmsg textarea {
+	padding: 8px 5px;
+	border: 1px solid #ccc;
+	vertical-align: middle;
+	background-color: #fcfcfc;
+	color: #666;
+	border-radius: 2px;
+	box-shadow: inset - 1px 3px #ddd;
+}
+.newmsg .submitButton a {
+	display: inline-block;
+	margin-right: 20px;
+	padding: 6px 5px;
+	width: 80px;
+	text-align: center;
+	border: none;
+	font-size: 14px;
+	color: #fff;
+	background-color: #FB9337;
+	border-radius: 2px;
+}
+.newmsg .sender, .newmsg .submitButton {
+	margin-left: 200px;
+}
+.newmsg .submitButton a:hover {
+	background-color: #485B79;
+}
+.newmsg .userlist {
+	position: absolute;
+	display: none;
+	list-style: none;
+}
+.newmsg .userlist li {
+	margin-bottom: 1px;
+	padding: 5px 80px;
+	background-color: #ccc;
+	font-size: 16px;
+}

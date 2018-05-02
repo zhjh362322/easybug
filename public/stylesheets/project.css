@@ -1,0 +1,175 @@
+.iconmenu ul li a.demand {
+	background-position: 8px -708px;
+}
+.iconmenu ul li.current a.demand {
+	background-position: 8px -744px;
+}
+.iconmenu ul li a.bug {
+	background-position: 8px -780px;
+}
+.iconmenu ul li.current a.bug {
+	background-position: 8px -816px;
+}
+.statistics .statistics-box {
+	margin-top: 25px;
+	margin-bottom: 25px;
+	text-align: center;
+	border-right: 1px solid #ccc;
+}
+.statistics .statistics-box:last-child {
+	border-right: none;
+}
+.statistics .statistics-title {
+	font-size: 16px;
+}
+.statistics .statistics-value {
+	font-size: 24px;
+	font-weight: bold;
+	line-height: 36px;
+	color: #000;
+}
+.filter {
+	margin-bottom: 25px;
+}
+.filter .title {
+	font-size: 16px;
+	line-height: 30px;
+	color: #000;
+}
+.filter .status ul {
+	list-style: none;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+.filter .status ul li {
+	display: inline-block;
+	width: 75px;
+	line-height: 28px;
+	text-align: center;
+}
+.filter .status ul li:nth-child(2) {
+	border-right: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+}
+.filter .searchtask {
+	padding-left: 5px;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+}
+.filter input {
+	width: 84%;
+	line-height: 29px;
+	border: none;
+	border-right: 1px solid #ccc;
+}
+.filter button {
+	padding: 7px 7px 7px 10px;
+	border: none;
+}
+.addtask {
+	margin-right: 5px;
+	padding: 3px 0 3px 0;
+	text-align: center;
+	border: 1px dashed #ccc;
+	border-radius: 3px;
+}
+.addtask a {
+	display: block;
+}
+.tastlist {
+	margin-top: 25px;
+}
+.tastlist .table {
+	width: 100%;
+	border-collapse: collapse;
+}
+.tastlist .table th:nth-child(3) {
+	width: 60%;
+}
+.tastlist .table tbody tr {
+	height: 60px;
+	border-bottom: 1px solid #ccc;
+}
+.tastlist .table td {
+	text-align: center;
+	vertical-align: middle;
+}
+
+
+.projectmodal {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, .5);
+}
+.addproject {
+	display: none;
+	position: absolute;
+	top: 15%;
+	left: 15%;
+	padding: 5px;
+	width: 70%;
+	border: 1px solid #d9d9d9;
+	border-radius: 2px;
+	box-shadow: 0 0 5px #d9d9d9;
+}
+.projectbox {
+	padding: 20px;
+	background-image: url('../images/patternbg.png');
+	background-color: rgb(50, 65, 90);
+}
+.addproject span.field {
+	display: block;
+	margin-left: 220px;
+	padding: 20px;
+	background-color: #fff;
+	border-left: 1px solid #ddd;
+}
+.addproject p {
+	border: 1px solid #ddd;
+	background-color: #fcfcfc;
+	border-top: 0;
+	margin: 0;
+}
+.addproject label {
+	float: left;
+	padding: 20px;
+	width: 120px;
+	text-align: right;
+	vertical-align: middle;
+	font-weight: bold;
+}
+.addproject input[type=text], .addproject textarea {
+	padding: 8px 5px;
+	border: 1px solid #ccc;
+	vertical-align: middle;
+	background-color: #fcfcfc;
+	color: #666;
+	border-radius: 2px;
+	box-shadow: inset - 1px 3px #ddd;
+}
+.addproject select, .addproject input[type=date] {
+	height: 32px;
+	min-width: 40%;
+	border: 1px solid #ccc;
+	background: #fcfcfc;
+	color: #666;
+	border-radius: 2px
+	box-shadow: inset 1px 1px 2px #ddd;
+}
+.addproject button {
+	margin: 5px 240px;
+	padding: 6px 5px;
+	width: 80px;
+	border: none;
+	font-size: 14px;
+	color: #fff;
+	background-color: #FB9337;
+	border-radius: 2px;
+}
+.addproject button:hover {
+	background-color: #485B79;
+}

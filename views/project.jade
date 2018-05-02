@@ -1,0 +1,96 @@
+extends layout
+block css
+  link(rel='stylesheet', href='/stylesheets/project.css')
+block menu
+  .vernav.iconmenu
+    ul
+      each item in list
+        li(class=item.cur)
+          a(class=item.icon, href=item.href) #{item.name}
+    a.togglemenu
+block centercontent
+  .centercontent
+    .statistics.clearfix
+      .one_half
+        .statistics-box
+          .statistics-title 我的待办
+          .statistics-value #{weekData[1]}个任务
+      .one_half.last
+        .statistics-box
+          .statistics-title 本周完成任务数
+          .statistics-value #{weekData[0]}个任务
+    .filter.clearfix
+      .one_half
+        .title 任务列表
+      .one_fourth.status
+        ul
+          li
+            a(href="#") 全部
+          li
+            a(href="#") 进行中
+          li
+            a(href="#") 已完成
+      .one_fourth.last
+        .searchtask
+          form
+            input
+            button.searchbtn 查
+    .addtask
+      a(href="#")
+        span +
+        | 添加
+    .tastlist
+      table.table
+        thead
+          tr
+            th 编号
+            th 类型
+            th 标题
+            th 创建人
+            th 日期
+            th 状态
+            th 操作
+        tbody
+          each item in contents
+            tr
+              td #{item.no}
+              td #{item.type}
+              td #{item.title}
+              td #{item.owner.uid}
+              td #{moment(item.createDate).format('YYYY-MM-DD')}
+              td #{item.status}
+              td
+                a(href="#") 编辑 |
+                a(href="/project/delete?_id="+item._id, id="del")  删除
+  .projectmodal
+  .addproject
+    .projectbox
+      form(method="post", action="/project/add")
+        input(type="hidden", name="owner", value=user._id)
+        p
+          label 标题
+          span.field
+            input.longinput(type="text", name="title")
+        p
+          label 详情
+          span.field
+            textarea.longinput(cols="80", rows="5", name="detail")
+        p
+          label 类型
+          span.field
+            select(name="type")
+              option(value="0") Bug
+              option(value="1") 需求
+        p
+          label 状态
+          span.field
+            select(name="status")
+              option(value="0") 进行中
+              option(value="1") 已完成
+        //- p
+        //-   label 创建时间
+        //-   span.field
+        //-     input(name="createDate", type="date")
+        p.proformbutton
+          button(type="submit").submit 保存
+  script(src="/javascripts/project.js")

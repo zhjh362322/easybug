@@ -1,0 +1,113 @@
+html,body {width: 100%; height: 100%;}
+.welcome {
+    display: table;
+    width: 100%;
+    height: 100%;
+    background: url(../images/bg.jpg) no-repeat center center scroll;
+    background-size: cover;
+}
+.text-vertical-center {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}
+.text-vertical-center h1 {
+	margin-bottom: 15px;
+	line-height: 36px;
+	font-size: 36px;
+	font-weight: 700;
+	color: #000;
+}
+.showmodal {
+	padding: 10px 26px;
+	font-size: 16px;
+	color: #fff;
+	cursor: pointer;
+	background-color: rgba(0, 0, 0, .3);
+}
+.loginmodal {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, .5);
+}
+.loginpage {
+	display: none;
+	position: absolute;
+	top: 15%;
+	left: 50%;
+	margin-left: -182px;
+	padding: 5px;
+	width: 362px;
+	border: 1px solid #d9d9d9;
+	border-radius: 2px;
+	box-shadow: 0 0 5px #d9d9d9;
+}
+.loginbox {
+	padding: 20px;
+	background-image: url('../images/patternbg.png');
+	background-color: rgb(50, 65, 90);
+}
+.loginbox .logo {
+	margin-bottom: 50px;
+	text-align: center;
+}
+.loginbox h1 {
+	border-bottom: 1px solid #56647D;
+	line-height: 36px;
+}
+.loginbox .slogan {
+	line-height: 30px;
+}
+.err {
+	display: none;
+	background-color: #FFFCCC;
+	text-align: center;
+	border-radius: 2px;
+	line-height: 28px;
+	font-size: 12px;
+}
+
+.loginbox form {
+	display: block;
+	margin-top: 20px;
+}
+.loginbox .username, .loginbox .password {
+	margin: 20px 0;
+	padding-right: 65px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+	border-radius: 2px;
+}
+.loginbox .username {
+	background: #eee url('../images/icons/username.png') no-repeat 13px center;
+}
+.loginbox .username input, .loginbox .password input {
+	margin-left: 45px;
+	padding: 15px 10px;
+	border: 0;
+	border-left: 1px solid #ddd;
+	width: 100%;
+	font-size: 14px;
+	border-radius: 2px;
+}
+.loginbox .password {
+	background: #eee url('../images/icons/password.png') no-repeat 13px center;
+}
+.loginbox .loginbtn {
+	display: block;
+	padding: 15px 10px;
+	text-align: center;
+	color: #fff;
+	font-size: 14px;
+	background: #f0801d url('../images/btngrad.png');
+	border-radius: 2px;
+	cursor: pointer;
+}
+.loginbox .keep {
+	margin-top: 20px;
+}
+
+

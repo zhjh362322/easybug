@@ -1,0 +1,48 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/base.css')
+    link(rel='stylesheet', href='/stylesheets/layout.css')
+    block css
+    script(src="/libs/jquery/dist/jquery.min.js")
+  body
+    .topheader
+      .left
+        h1 ZBKJ
+        span.slogan 后台管理系统
+        .search
+          form
+          input(type="text", placeholder="search")
+          button.submitButton
+      .right
+        .userinfo
+          img(src="/images/thumbs/avatar.png")
+          //- span #{user.uid}
+          span #{user.uid}
+        .userinfodrop
+          .avatar
+            img(src="/images/thumbs/avatarbig.png")
+          .userdata
+            //- h4 #{user.uid}
+            h4 #{user.uid}
+            span.email zheng6917@foxmail.com
+            ul
+              li
+                a(href="") Account Settings
+              li
+                a(href="/") Sign Out
+    block menu
+    .header
+      .headermenu
+        ul
+          li(class=current.project)
+            a.task(href="/project")
+              span.icon.icon-flatscreen
+              | 任务
+          li(class=current.message)
+            a.message(href="/message")
+              span.icon.icon-message
+              | 信息
+    block centercontent
+    script(src="/javascripts/layout.js")
