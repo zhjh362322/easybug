@@ -1,0 +1,11 @@
+extends layout
+block css
+    link(rel='stylesheet', href='/stylesheets/message.css')
+block centercontent
+    .vernav.iconmenu
+        ul
+            li
+                a.adduser 添加用户
+            li
+                a(href="/users/userlist") 用户列表
+        a.togglemenu

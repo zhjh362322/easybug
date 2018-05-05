@@ -3,7 +3,7 @@ var router = express.Router();
 var User = require('../database/model/userModel');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
   res.render('index', { title: 'login' });
 });
 router.route('/login').get(function(req, res) {
@@ -28,7 +28,7 @@ router.route('/login').get(function(req, res) {
 router.get('/welcome', function(req, res) {
   res.render('welcome', {
   	title: 'login',
-  	current: {task: 'current', message: ''}
+  	current: {project: 'current', message: '', user: ''}
   });
 });
 

@@ -18,7 +18,7 @@ router.get('/', function(req, res, next) {
 			format(list);
 			res.render('project', {
 				title: '任务管理',
-				current: {project: 'current', message: ''},
+				current: {project: 'current', message: '',user: ''},
 				list: [
 					{name: '需求管理', cur: cur1, icon: 'demand', href: '/project?type=1'},
 					{name: 'BUG汇总', cur: cur0, icon: 'bug', href: '/project?type=0'}

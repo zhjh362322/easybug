@@ -146,6 +146,9 @@
 .headermenu li a span.icon-message {
 	background: url('../images/icons/message.white.png') no-repeat center center;
 }
+.headermenu li a span.icon-user {
+	background: url('../images/icons/pencil.white.png') no-repeat center center;
+}
 .headermenu li.current {
 	border-left: 0;
 	border-right: 1px solid #394962;

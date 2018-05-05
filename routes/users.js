@@ -4,7 +4,10 @@ var User = require('../database/model/userModel');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+	res.render('user', {
+		title: '用户管理',
+		current: {project: '', message: '', user: 'current'}
+	});
 });
 router.get('/receiverlist', function(req, res, next) {
 	var uid = req.query.uid;
@@ -17,4 +20,7 @@ router.get('/receiverlist', function(req, res, next) {
 		}
 	})
 })
+router.get('/userlist', function(req, res) {
+	res.status(200).json({a: 1})
+});
 module.exports = router;

@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var Message = require('../database/model/messageModel');
 
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
 	var user = req.session.user;
 	Message.fetch({'$or':[{owner: user._id}, {receiver: user._id, draft: 0}]}, function(err, docs) {
 		if(err) {
@@ -10,13 +10,13 @@ router.get('/', function(req, res, next) {
 		} else {
 			res.render('message', {
 				title: 'message',
-				current: {project: '', message: 'current'},
+				current: {project: '', message: 'current', user: ''},
 				msgs: docs
 			});
 		}
 	})
 });
-router.get('/updatestatus', function(req, res, next) {
+router.get('/updatestatus', function(req, res) {
 	var q = req.query;
 	var conditions = {_id: q.msgid};
 	var updates;
@@ -33,7 +33,7 @@ router.get('/updatestatus', function(req, res, next) {
 		}
 	})
 })
-router.get('/msginfo', function(req, res, next) {
+router.get('/msginfo', function(req, res) {
 	var q = req.query;
 	Message.findId(q.msgid, function(err, docs) {
 		if(err) {
@@ -73,7 +73,7 @@ router.get('/:name', function(req, res, next) {
 		} else {
 			res.render('message', {
 				title: 'message',
-				current: {project: '', message: 'current'},
+				current: {project: '', message: 'current', user: ''},
 				msgs: docs
 			});
 		}
@@ -95,8 +95,6 @@ router.post('/editmsg', function(req, res, next) {
 	var formData = req.body;
 	var conditions = {_id: formData._id};
 	delete formData._id;
-	console.log(conditions)
-	console.log(formData)
 	Message.update(conditions, formData, function(err, docs) {
 		if(err) {
 			res.status(500).json({err: '网络错误！'})
