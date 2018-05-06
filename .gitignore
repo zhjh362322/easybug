@@ -37,6 +37,9 @@ node_modules/
 jspm_packages/
 public/libs/
 
+# webstrom idea
+.idea
+
 # TypeScript v1 declaration files
 typings/
 
