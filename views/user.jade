@@ -1,7 +1,7 @@
 extends layout
 block css
-    link(rel='stylesheet', href='/stylesheets/message.css')
-block centercontent
+    link(rel='stylesheet', href='/stylesheets/user.css')
+block menu
     .vernav.iconmenu
         ul
             li
@@ -9,3 +9,49 @@ block centercontent
             li
                 a(href="/users/userlist") 用户列表
         a.togglemenu
+block centercontent
+    .centercontent
+        .userlist
+            .contenttitle
+                h3 用户列表
+            .tableoptions
+                button Delete Selected
+            table(class="usertable")
+                colgroup
+                    col.con1(style="width: 4%;")
+                    col.con0
+                    col.con1
+                    col.con0
+                    col.con1
+                thead
+                    tr
+                        th
+                            input(type="checkbox", class="checkall")
+                        th 用户名
+                        th 姓名
+                        th 创建时间
+                        th 角色
+                tbody
+                    tr
+                        td
+                            input(type="checkbox", class="check")
+                        td zjh
+                        td 郑三
+                        td 管理员
+                        td 2017-01-01
+                    tr
+                        td
+                            input(type="checkbox", class="check")
+                        td zwh
+                        td 郑文
+                        td 管理员
+                        td 2018-01-01
+        .adduser
+            form
+                h4 新增用户
+                p
+                    label 用户名
+                    input
+                p
+                    label 姓名
+                    input
