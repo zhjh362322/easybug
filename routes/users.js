@@ -18,9 +18,15 @@ router.get('/receiverlist', function(req, res, next) {
 		} else {
 			res.status(200).json(docs);
 		}
-	})
-})
+	});
+});
 router.get('/userlist', function(req, res) {
-	res.status(200).json({a: 1})
+	User.fetch(function(err, docs) {
+		if(err) {
+            res.status(500).json({err: '网络错误！'});
+		} else {
+            res.status(200).json(docs);
+		}
+	});
 });
 module.exports = router;

@@ -4,7 +4,7 @@ $(function(){
 		var msgid = $(this).children('.status')[0].dataset.msgid.replace(/\"/g, '');
 		$.get('/message/msginfo', {msgid: msgid}, function(data, status) {
 			if(data) {
-				console.log(data)
+				console.log(data);
 				// isedit 保存当前选中message的ID
 				$('#isedit').val(data._id);
 				$('#uid').val(data.receiver.uid);
@@ -15,7 +15,7 @@ $(function(){
 				$('.newmsg').show();
 			}
 		});
-	})
+	});
 	// 点击左侧菜单效果，控制列表和新增面的显示隐藏。 addmsg & other
 	$('.vernav li a').click(function() {
 		$(this).each(function() {
@@ -32,8 +32,8 @@ $(function(){
 				$('.newmsg').hide();
 				$('.centercontent .message').show();
 			}
-		})
-	})
+		});
+	});
 	// 收件人输入内容，查询用户列表
 	$('#uid').bind('input propertychange', function(e) {
 		var uid = $(this).val();
@@ -58,20 +58,20 @@ $(function(){
 				$(data).each(function(i, n) {
 					var li = "<li data-id=" + n['_id'] + " class='user'>" + n.uid + "</li>";
 					html = html.concat(li, '');
-				})
+				});
 			}
-			userlist.html(html)
-		})
+			userlist.html(html);
+		});
 
-	})
+	});
 	// 选择用户列表事件，主要是给收件人输入框赋值，并保存用户ID以便存入数据库
 	$('.userlist').on('click','.user', function(e) {
 		var id = $(this)[0].dataset.id;
 		var name = $(this)[0].innerText;
-		$('#receiver').val(id)
+		$('#receiver').val(id);
 		$('#uid').val(name);
 		$('.userlist').hide();
-	})
+	});
 
 	// 更新已读和星标状态
 	$('.star').click(function() {
@@ -84,10 +84,10 @@ $(function(){
 			data = {star:'current', msgid: msgid};
 		}
 		$.get(url, data, function(data, status) {
-		})
-	})
+		});
+	});
 	$('.box').click(function() {
-		$(this).toggleClass('current')
+		$(this).toggleClass('current');
 		var msgid = $(this).parent()[0].dataset.msgid.replace(/\"/g, '');
 		var clz = $(this).hasClass('current');
 		var url = '/message/updatestatus';
@@ -96,13 +96,13 @@ $(function(){
 			data = {box:'current', msgid: msgid};
 		}
 		$.get(url, data, function(data, status) {
-		})
-	})
+		});
+	});
 
 	// 保存草稿、发送、删除事件
 	$('.submitButton').click(function(e) {
 		var receiver = $('#receiver').val();
-		console.log(receiver)
+		console.log(receiver);
 		var isedit = $('#isedit').val();
 		var which = e.target.className;
 		var data = {};
@@ -110,15 +110,15 @@ $(function(){
 		// isedit有值时是双击message列表进入的编辑页面
 		if(isedit != 0) {
 			data['_id'] = isedit;
-			url = '/message/editmsg'
+			url = '/message/editmsg';
 		}
 		// delete & isedit 删除
 		if(which == 'delete' && isedit != 0) {
 			$.get('/message/delete', {'_id': isedit}, function(data, status) {
 				if(data == 'OK' && status == 'success') {
-					location.href = '/message'
+					location.href = '/message';
 				}
-			})
+			});
 		} else {
 			// 新增
 			if(which == 'send') {
@@ -134,24 +134,24 @@ $(function(){
 					return;
 				}
 				data[obj.name] = obj.value;
-			})
+			});
 
 			$.ajax({
 				url: url,
 				type: 'post',
 				data: data,
 				success: function(rst, status) {
-					location.href = '/message'
+					location.href = '/message';
 				},
 				error: function(rst, status) {
 					var rstJson = rst.responseJSON;
 					// $('.err').text(rstJson.err).show();
 				}
-			})
+			});
 		}
 	});
 
-})
+});
 
 
 

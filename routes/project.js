@@ -36,10 +36,10 @@ router.get('/delete', function(req, res, next) {
 		if(err) {
 			res.status(500).json({err: '网络错误！'});
 		} else {
-			res.redirect('/project')
+			res.redirect('/project');
 		}
-	})
-})
+	});
+});
 // router.get('/demand', function(req, res, next) {
 
 // 	res.render('project', {
@@ -69,23 +69,23 @@ router.post('/add', function(req, res, next) {
 			} else {
 				res.redirect('/project');
 			}
-		})
-	})
+		});
+	});
 
-})
+});
 // 格式化数据，日期用moment格式化。
 // 数据库为Number时，这个格式化方法无效？？？？？？？
 function format(docs) {
 	return docs.map(function(item, index) {
 		item.type = item.type == 1 ? '需求' : 'BUG';
 		item.status = item.status == 1 ? '已完成' : '进行中';
-	})
+	});
 }
 // 获取本周第一天，以便统计本周数据
 function showWeekFirstDay() {
     var Nowdate = new Date();
     var WeekFirstDay = new Date(Nowdate - (Nowdate.getDay() -1 ) * 86400000);
-    var M = Number(WeekFirstDay.getMonth()) + 1
+    var M = Number(WeekFirstDay.getMonth()) + 1;
     return WeekFirstDay.getFullYear() + "-" + M + "-" + WeekFirstDay.getDate();
 }
 // 本周数据统计
