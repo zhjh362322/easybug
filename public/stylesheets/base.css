@@ -63,3 +63,4 @@ span.h3 { font-size: 24px; display: block; }
 /*****************************/
 
 form input.longinput, form textarea.longinput {width: 95%;}
+.current {display: block;}

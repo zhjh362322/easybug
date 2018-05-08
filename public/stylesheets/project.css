@@ -149,7 +149,7 @@
 	background-color: #fcfcfc;
 	color: #666;
 	border-radius: 2px;
-	box-shadow: inset - 1px 3px #ddd;
+	box-shadow: inset 1px 3px #ddd;
 }
 .addproject select, .addproject input[type=date] {
 	height: 32px;
@@ -157,7 +157,7 @@
 	border: 1px solid #ccc;
 	background: #fcfcfc;
 	color: #666;
-	border-radius: 2px
+	border-radius: 2px;
 	box-shadow: inset 1px 1px 2px #ddd;
 }
 .addproject button {

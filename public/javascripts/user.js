@@ -1,7 +1,9 @@
 $(function() {
     $('.showuserlist').click(function() {
-        $.get('/users/userlist', function(data, status) {
+        location.href = "/users/userlist";
+    });
 
-        });
+    $('.newuser').click(function() {
+        location.href = "/users/adduser";
     });
 });

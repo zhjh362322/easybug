@@ -7,7 +7,7 @@ router.get('/', function(req, res) {
   res.render('index', { title: 'login' });
 });
 router.route('/login').get(function(req, res) {
-  res.redirect('/')
+  res.redirect('/');
 }).post(function(req, res) {
 	var user = req.body;
 	User.findByUid(user.username, function(err, doc) {
@@ -26,10 +26,10 @@ router.route('/login').get(function(req, res) {
 	});
 });
 router.get('/welcome', function(req, res) {
-  res.render('welcome', {
-  	title: 'login',
-  	current: {project: 'current', message: '', user: ''}
-  });
+	res.render('welcome', {
+		title: 'login',
+		current: {project: 'current', message: '', user: ''}
+	});
 });
 
 module.exports = router;

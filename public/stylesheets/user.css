@@ -1,7 +1,4 @@
-.userlist {
-	display: none;
-}
-.userlist .contenttitle {
+.contenttitle {
 	margin: 20px 0;
 	display: inline-block;
 	padding-bottom: 5px;
@@ -45,9 +42,6 @@
 	cursor: pointer;
 }
 
-.adduser {
-	display: none;
-}
 .adduser form p {
 	padding: 20px 0;
 }

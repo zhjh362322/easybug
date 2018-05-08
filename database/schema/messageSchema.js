@@ -26,7 +26,7 @@ var MessageSchema = new Schema({
 		type: Number,
 		default: 0
 	}
-})
+});
 
 MessageSchema.statics = {
 	fetch: function(owner, cb) {
@@ -45,12 +45,10 @@ MessageSchema.statics = {
 			.populate('owner receiver', 'uid _id')
 			.exec(cb);
 	},
-	updateById: function(_id, data) {
-		console.log(typeof _id)
-		console.log(data)
-		return this.update({_id, _id}, data)
+	updateById: function(_id, data, cb) {
+		return this.update({_id: _id}, data)
 			.exec(cb);
 	}
-}
+};
 
 module.exports = MessageSchema;

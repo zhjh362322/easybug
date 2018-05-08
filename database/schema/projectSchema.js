@@ -40,7 +40,7 @@ ProjectSchema.statics = {
 			.exec(cb);
 	},
 	removeById: function(_id, cb) {
-		return this.remove({_id, _id})
+		return this.remove({_id: _id})
 			.exec(cb);
 	}
 };
