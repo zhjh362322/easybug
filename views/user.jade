@@ -29,7 +29,7 @@ block centercontent
                     thead
                         tr
                             th
-                                input(type="checkbox", class="checkall")
+                                input(type="checkbox", class="checkall", name="")
                             th 用户名
                             th 姓名
                             th 创建时间
@@ -54,11 +54,23 @@ block centercontent
                     p
                         label 用户名
                         span.field
-                            input.longinput
+                            input.longinput(name="uid")
                     p
                         label 姓名
                         span.field
-                            input.longinput
+                            input.longinput(name="name")
+                    p
+                        label 角色
+                        span.field
+                            select(name="level", style="width: 350px; height: 30px;")
+                                option(value="10") 普通用户
+                                option(value="20") 管理员
+                    p
+                        label 状态
+                        span.field
+                            select(name="status", style="width: 350px; height: 30px;")
+                                option(value="0") 未启用
+                                option(value="1") 已启用
                     .submitButton
-                        a(href="") 保存
+                        a(class="save") 保存
     script(src="../javascripts/user.js")

@@ -102,7 +102,6 @@ $(function(){
 	// 保存草稿、发送、删除事件
 	$('.submitButton').click(function(e) {
 		var receiver = $('#receiver').val();
-		console.log(receiver);
 		var isedit = $('#isedit').val();
 		var which = e.target.className;
 		var data = {};

@@ -44,6 +44,14 @@ router.route('/adduser').get(function(req, res) {
         page: {index: 0, userlist: 0, adduser: 1}
     });
 }).post(function(req, res) {
-
+	var formData = req.body;
+	var user = new User(formData);
+	user.save(function (err, doc) {
+        if(err) {
+            res.status(500).json({err: '网络错误！'});
+        } else {
+            res.send(200);
+        }
+    });
 });
 module.exports = router;

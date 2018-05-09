@@ -14,7 +14,7 @@ router.get('/', function(req, res) {
 				msgs: docs
 			});
 		}
-	})
+	});
 });
 router.get('/updatestatus', function(req, res) {
 	var q = req.query;
@@ -27,33 +27,33 @@ router.get('/updatestatus', function(req, res) {
 	}
 	Message.update(conditions, updates, function(err, docs) {
 		if(err) {
-			res.status(500).json({err: '网络错误！'})
+			res.status(500).json({err: '网络错误！'});
 		}else {
 			res.send(200);
 		}
-	})
-})
+	});
+});
 router.get('/msginfo', function(req, res) {
 	var q = req.query;
 	Message.findId(q.msgid, function(err, docs) {
 		if(err) {
-			res.status(500).json({err: '网络错误！'})
+			res.status(500).json({err: '网络错误！'});
 		}else {
 			res.status(200).json(docs);
 		}
-	})
-})
+	});
+});
 router.get('/delete', function(req, res, next) {
 	var q = req.query;
-	var id = q['_id']
+	var id = q['_id'];
 	Message.remove({_id: id}, function(err, docs) {
 		if(err) {
-			res.status(500).json({err: '网络错误！'})
+			res.status(500).json({err: '网络错误！'});
 		}else {
 			res.send(200);
 		}
-	})
-})
+	});
+});
 router.get('/:name', function(req, res, next) {
 	var user = req.session.user;
 	var rote = req.params.name;
@@ -77,7 +77,7 @@ router.get('/:name', function(req, res, next) {
 				msgs: docs
 			});
 		}
-	})
+	});
 });
 
 router.post('/newmsg', function(req, res, next) {
@@ -85,7 +85,7 @@ router.post('/newmsg', function(req, res, next) {
 	var message = new Message(formData);
 	message.save(function(err, doc) {
 		if(err) {
-			res.status(500).json({err: '网络错误！'})
+			res.status(500).json({err: '网络错误！'});
 		} else {
 			res.send(200);
 		}
@@ -97,7 +97,7 @@ router.post('/editmsg', function(req, res, next) {
 	delete formData._id;
 	Message.update(conditions, formData, function(err, docs) {
 		if(err) {
-			res.status(500).json({err: '网络错误！'})
+			res.status(500).json({err: '网络错误！'});
 		}else {
 			res.send(200);
 		}
