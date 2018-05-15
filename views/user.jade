@@ -18,7 +18,7 @@ block centercontent
                 .contenttitle
                     h3 用户列表
                 .tableoptions
-                    button Delete Selected
+                    button.del Delete Selected
                 table(class="usertable")
                     colgroup
                         col.con1(style="width: 4%;")
@@ -40,10 +40,10 @@ block centercontent
                             each item in users
                                 tr
                                     td
-                                        input(type="checkbox", class="check")
+                                        input(type="checkbox", class="check", value=item._id)
                                     td= item.uid
                                     td= item.name
-                                    td= item.meta.createAt
+                                    td #{moment(item.meta.createAt).format('YYYY-MM-DD')}
                                     td= item.level
                                     td= item.status
         - else

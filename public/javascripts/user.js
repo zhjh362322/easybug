@@ -26,4 +26,9 @@ $(function() {
             }
         });
     });
+
+    $('.tableoptions .del').click(function() {
+       var v = $('.userlist input[type="checkbox"]').val();
+       console.log(v);
+    });
 });

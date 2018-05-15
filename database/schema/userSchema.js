@@ -41,7 +41,7 @@ UserSchema.statics = {
 	// find、findOne
 	// find第一个参数：查询条件，二：控制查找结果，三：输出控制skip、sort、limit等，四：回调函数。
 	// 回调函数也可以用 .exec(cb) 调用。  只有第三个函数时，一、二不能省略，可以用null
-		return this.find({}, {meta: 0})
+		return this.find({}, {password: 0})
 			.sort('meta.createAt')
 			.exec(cb);
 	},
