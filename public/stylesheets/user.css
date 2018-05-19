@@ -76,3 +76,6 @@
 .adduser .submitButton a:hover {
 	background-color: #485B79;
 }
+.updateuser {
+	display: none;
+}

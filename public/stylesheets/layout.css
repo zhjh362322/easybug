@@ -217,3 +217,15 @@
 .centercontent {
 	margin-left: 231px;
 }
+.setting {
+	display: none;
+	position: absolute;
+	top: 200px;
+	right: 10px;
+	padding: 10px;
+	min-width: 280px;
+	border-radius: 2px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+	background-color: #fff;
+	z-index: 100;
+}

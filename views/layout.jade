@@ -19,19 +19,32 @@ html
         .userinfo
           img(src="/images/thumbs/avatar.png")
           //- span #{user.uid}
-          span #{user.uid}
+          span #{user.name}
         .userinfodrop
           .avatar
             img(src="/images/thumbs/avatarbig.png")
           .userdata
             //- h4 #{user.uid}
             h4 #{user.uid}
-            span.email zheng6917@foxmail.com
+            span.email #{user.email}
             ul
               li
-                a(href="") Account Settings
+                a.settingAccount Account Settings
               li
-                a(href="/") Sign Out
+                a(href="/login") Sign Out
+      .setting
+        form(method="post")
+          input(type="hidden", name="_id", value=user._id)
+          p
+            label 姓名
+            input.longinput(name="name", value=user.name, placeholder=user.name)
+          p
+            label 邮箱
+            input.longinput(name="email", value=user.email, placeholder=user.email)
+          p
+            label 密码
+            input.longinput(name="password")
+          button.edituser 确认
     block menu
     .header
       .headermenu

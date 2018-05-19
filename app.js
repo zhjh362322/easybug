@@ -36,9 +36,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(function(req, res, next) {
-	res.locals.user = req.session.user;
+  res.locals.user = req.session.user;
   res.locals.moment = moment;
-	next();
+  next();
 });
 app.use(function(req, res, next) {
   var url = req.originalUrl;

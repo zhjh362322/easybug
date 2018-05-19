@@ -13,6 +13,7 @@ var UserSchema = new Schema({
 	name: String,
 	level: Number,
 	status: Number,
+	email: String,
 	meta: {
 		createAt: {
 			type: Date,
